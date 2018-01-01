@@ -1,0 +1,148 @@
+/* Declaration Order
+   1) Positioning
+   2) Box-Model
+   3) Typographic
+   4) Visual */
+
+/* Utility */
+
+body {
+  background-color: gainsboro;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Nav */
+
+nav#main-nav {
+  height: 2em;
+  background-color: black;
+  font-size: .9em;
+}
+
+nav#sub-nav {
+  height: 3em;
+  background-color: white;
+  font-size: 1.1em;
+}
+
+nav#main-nav a:hover {
+  color: white;
+}
+
+nav#sub-nav a:hover {
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: grey;
+  margin-right: .5em;
+}
+
+nav#main-nav nav.primary a:first-child {
+  color: white;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+div.logo {
+  display: none;
+}
+
+nav#mobile-nav {
+  display: none;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+  nav#main-nav {
+    font-size: .85em;
+  }
+
+  nav#sub-nav {
+    font-size: 1em;
+  }
+
+  nav#main-nav nav.secondary a:first-child {
+    display: none;
+  }
+
+  div.logo {
+    display: inline;
+    height: 5em;
+    width: 15%;
+    background: linear-gradient(to bottom right, #D13394, #FD512A);
+    text-align: center;
+  }
+
+  div.full-nav {
+    display: flex;
+    width: 100%;
+  }
+
+  div.navigation {
+    width: 100%;
+  }
+
+  span.logo-text {
+    color: white;
+    font-weight: 900;
+    font-family: 'Fascinate', cursive;
+    font-size: 1.3em;
+    line-height: 3.5em;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 425px) {
+  nav#main-nav, nav#sub-nav {
+    display: none;
+  }
+
+  div.navigation {
+    height: 2.5em;
+    background-color: white;
+  }
+
+  div.logo {
+    height: 2.5em;
+    width: 30%;
+  }
+
+  span.logo-text {
+    line-height: 1.8em;
+    font-size: 1.5em;
+  }
+
+  nav#mobile-nav {
+    display: inline;
+  }
+
+  .container {
+    justify-content: flex-end;
+  }
+
+  nav a, nav a:last-child {
+    margin-right: .8em;
+  }
+
+  nav a:last-child {
+    color: darkorange;
+  }
+}
