@@ -10,10 +10,6 @@ html, body {
   height: 100%;
 }
 
-main {
-  height: 100%;
-}
-
 body {
   background-color: gainsboro;
   min-height: 100%;
@@ -47,6 +43,8 @@ span.red {
 /* Nav */
 
 div.full-nav {
+  position: fixed;
+  width: 100%;
   flex: 1 0 auto;
 }
 
@@ -98,6 +96,7 @@ main {
   width: 99%;
   margin: 0 auto;
   flex: 1 0 auto;
+  margin-top: 5em;
 }
 
 section.highlights {
@@ -231,10 +230,6 @@ section.copyright p {
   section.latest, div.sections {
     width: 85%;
   }
-
-  main {
-    height: auto;
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -252,10 +247,6 @@ section.copyright p {
     width: 31%;
     margin-right: 2%;
     margin-bottom: 2%;
-  }
-
-  main {
-    height: auto;
   }
 
   div.title {
@@ -339,6 +330,10 @@ section.copyright p {
 
   div.sections * {
     width: 100%;
+  }
+
+  main {
+    margin-top: 2.5em;
   }
 
   /* Footer */
