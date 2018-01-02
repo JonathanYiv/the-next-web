@@ -6,8 +6,19 @@
 
 /* Utility */
 
+html, body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
 body {
   background-color: gainsboro;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -34,6 +45,10 @@ span.red {
 }
 
 /* Nav */
+
+div.full-nav {
+  flex: 1 0 auto;
+}
 
 nav#main-nav {
   height: 2em;
@@ -77,11 +92,92 @@ nav#mobile-nav {
   display: none;
 }
 
+/* Main Content */
+
+main {
+  width: 99%;
+  margin: 0 auto;
+  flex: 1 0 auto;
+}
+
+section.highlights {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 30em;
+  margin-top: .5em;
+}
+
+article.a {
+  height: 30em;
+  width: 70%;
+  margin-right: .3em;
+  background-color: blue;
+}
+
+article.b {
+  height: 15em;
+  width: 30%;
+  margin-bottom: .3em;
+  background-color: red;
+}
+
+article.c {
+  height: 14.7em;
+  width: 30%;
+  background-color: green;
+}
+
+section.latest {
+  width: 60%;
+  margin: 2em auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section.latest article {
+  width: 23%;
+  height: 10em;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  background-color: orange;
+  border: 1px solid black;
+}
+
+div.title {
+  width: 100%;
+  margin-bottom: 1em;
+  font-weight: 900;
+  font-size: 1.8em;
+  color: darkorange;
+}
+
+/* Sections */
+
+div.sections {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+}
+
+div.sections * {
+  width: 33%;
+  margin-bottom: 2em;
+}
+
+div.sections article {
+  height: 35em;
+  width: 95%;
+  border: 1px solid black;
+  background-color: pink;
+}
+
 /* Footer */
 
 footer {
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
   width: 100%;
 }
 
@@ -129,9 +225,47 @@ section.copyright p {
   display: inline;
 }
 
+/* Laptop */
+
+@media screen and (max-width: 1440px) {
+  section.latest, div.sections {
+    width: 85%;
+  }
+
+  main {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  section.latest, div.sections {
+    width: 95%;
+  }
+}
+
 /* Tablet */
 
 @media screen and (max-width: 768px) {
+  /* Main Content */
+
+  section.latest article {
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+
+  main {
+    height: auto;
+  }
+
+  div.title {
+    font-size: 1.5em;
+  }
+
+  div.sections * {
+    width: 50%;
+  }
+
   /* Footer */
   footer a {
     font-size: 1em;
@@ -181,6 +315,32 @@ section.copyright p {
 /* Mobile */
 
 @media screen and (max-width: 425px) {
+  /* Main Content */
+  section.highlights {
+    max-height: none;
+  }
+
+  article.a, article.b, article.c {
+    width: 98%;
+    height: 20em;
+    margin: .3em auto;
+  }
+
+  section.latest article {
+    width: 100%;
+    height: 7em;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+
+  div.title {
+    margin-top: 1em;
+  }
+
+  div.sections * {
+    width: 100%;
+  }
+
   /* Footer */
   footer a {
     font-size: .7em;
