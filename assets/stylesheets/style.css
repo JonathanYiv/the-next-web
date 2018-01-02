@@ -23,6 +23,16 @@ body {
   margin: 0 auto;
 }
 
+span.logo-text {
+  color: white;
+  font-weight: 900;
+  font-family: 'Fascinate', cursive;
+}
+
+span.red {
+  color: red;
+}
+
 /* Nav */
 
 nav#main-nav {
@@ -67,9 +77,72 @@ nav#mobile-nav {
   display: none;
 }
 
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+section.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8em;
+  font-size: 20px;
+  background-color: #000000;
+  color: white;
+}
+
+section.site-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+  background-color: #1A1A1A;
+}
+
+section.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8em;
+  background-color: #1A1A1A;
+}
+
+footer a {
+  margin-right: .5em;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+}
+
+section.social-media i {
+  padding: 1em 1em;
+  background-color: #363636;
+  margin-right: 1em;
+  border-radius: 2em;
+}
+
+section.copyright p {
+  display: inline;
+}
+
 /* Tablet */
 
 @media screen and (max-width: 768px) {
+  /* Footer */
+  footer a {
+    font-size: 1em;
+  }
+
+  section.copyright {
+    font-size: 15px;
+  }
+
+  /* Navbar */
+
   nav#main-nav {
     font-size: .85em;
   }
@@ -100,9 +173,6 @@ nav#mobile-nav {
   }
 
   span.logo-text {
-    color: white;
-    font-weight: 900;
-    font-family: 'Fascinate', cursive;
     font-size: 1.3em;
     line-height: 3.5em;
   }
@@ -111,6 +181,30 @@ nav#mobile-nav {
 /* Mobile */
 
 @media screen and (max-width: 425px) {
+  /* Footer */
+  footer a {
+    font-size: .7em;
+  }
+
+  section.social-media {
+    height: 6em;
+  }
+
+  section.site-map {
+    height: 3em;
+  }
+
+  section.copyright {
+    flex-flow: column;
+    height: 12em;
+    font-size: 12px;
+  }
+
+  section.copyright p {
+    display: block;
+  }
+
+  /* Navbar */
   nav#main-nav, nav#sub-nav {
     display: none;
   }
@@ -144,5 +238,17 @@ nav#mobile-nav {
 
   nav a:last-child {
     color: darkorange;
+  }
+}
+
+/* Mobile Small */
+@media screen and (max-width: 425px) {
+  /* Footer */
+  footer a {
+    margin-right: .05em;
+  }
+
+  section.site-map a {
+    margin-right: .8em;
   }
 }
